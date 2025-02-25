@@ -7,9 +7,9 @@ Firmware_Diy_Core() {
 	# 请在该函数内按需修改变量设置, 使用 case 语句控制不同预设变量的设置
 	
 	# 可用预设变量
-	# ${OP_AUTHOR}			OpenWrt 源码作者
-	# ${OP_REPO}			OpenWrt 仓库名称
-	# ${OP_BRANCH}			OpenWrt 源码分支
+	# ${OP_AUTHOR}  			OpenWrt 源码作者
+	# ${OP_REPO}    			OpenWrt 仓库名称
+	# ${OP_BRANCH}  			OpenWrt 源码分支
 	# ${CONFIG_FILE}		配置文件
 	
 	Author=AUTO
@@ -21,7 +21,7 @@ Firmware_Diy_Core() {
 	Default_Flag=AUTO
 	# 固件标签 (名称后缀), 适用不同配置文件, AUTO: [自动识别]
 	
-	Default_IP="192.168.1.1"
+	Default_IP="192.168.50.1"
 	# 固件 IP 地址
 	
 	Default_Title="Powered by AutoBuild-Actions"
@@ -94,7 +94,7 @@ fi
 exit 0
 EOF
 		# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${FEEDS_PKG}/ttyd/files/ttyd.config
-		# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+		 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 		# sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon-mod"' $(PKG_Finder d package default-settings)/files/zzz-default-settings
 		#sed -i "s?openwrt-23.05?master?g" ${FEEDS_CONF}
 		git reset --hard 1627fd2c745e496134834a8fb8145ba0aa458ae9
